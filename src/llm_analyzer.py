@@ -32,7 +32,7 @@ def analisar_comportamento(historico_mensagens):
     try:
         response = client.chat.completions.create(
             # Vamos usar um modelo gratuito e muito rápido disponível no OpenRouter
-            model="meta-llama/llama-3-8b-instruct:free", 
+            model="openrouter/auto",
             messages=[
                 {"role": "system", "content": prompt_sistema},
                 {"role": "user", "content": f"Aqui estão as conversas recentes para análise:\n\n{texto_contexto}"}
