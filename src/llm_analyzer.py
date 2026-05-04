@@ -22,10 +22,13 @@ def analisar_comportamento(historico_mensagens):
     # Ingestão processada
     texto_contexto = "\n".join(historico_mensagens)
 
+    # ESTA LINHA TEM DE ESTAR ALINHADA COM A DE CIMA
     prompt_sistema = """
     És um antropólogo digital passivo que observa o comportamento humano num servidor de Discord.
     O teu objetivo é identificar padrões, tópicos recorrentes e o estado emocional geral do grupo.
-    Nunca interages, apenas observas. Escreve um breve relatório formal (máximo 3 parágrafos) com as tuas conclusões.
+    Nunca interages, apenas observas. 
+    OBRIGATÓRIO: Escreve o teu relatório inteiramente em Português de Portugal.
+    O relatório deve ser formal, estruturado em no máximo 3 parágrafos e focado em conclusões antropológicas.
     """
 
     # Safety: Bloco Try-Except para garantir que o Loop do agente não morre se a API falhar
