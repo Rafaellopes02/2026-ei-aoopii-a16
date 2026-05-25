@@ -50,8 +50,8 @@ async def on_message(message):
             resumo_anterior = relatorio[:500]
             memoria_mensagens.clear()
         else:
-            print("ERRO DETALHADO:", traceback.format_exc())
-            await message.channel.send("❌ *Erro: Falha ao gravar no Google Docs. Verifica as credenciais no Render.*")
+            from gdocs_writer import ultimo_erro
+            await message.channel.send(f"❌ *Erro Google Docs:* `{ultimo_erro}`")
             memoria_mensagens.clear()
 
 if __name__ == "__main__":
