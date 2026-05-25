@@ -14,7 +14,7 @@ def escrever_no_relatorio(texto_analise):
         return False
 
     try:
-        creds = Credentials.from_service_account_file('../credentials.json', scopes=SCOPES)
+        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
         service = build('docs', 'v1', credentials=creds)
 
         # Lê o documento para saber o índice do fim
