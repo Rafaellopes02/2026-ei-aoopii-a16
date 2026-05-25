@@ -16,7 +16,7 @@ client = discord.Client(intents=intents)
 
 # Memória temporária do bot
 memoria_mensagens = []
-LIMITE_MENSAGENS = 5 # Quantas mensagens acumula antes de gerar um relatório
+LIMITE_MENSAGENS = 5 
 
 @client.event
 async def on_ready():
