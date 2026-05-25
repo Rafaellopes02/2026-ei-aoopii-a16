@@ -14,7 +14,12 @@ def escrever_no_relatorio(texto_analise):
         return False
 
     try:
-        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
+        # Descobre o caminho da pasta raiz (uma acima de 'src')
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        credentials_path = os.path.join(base_dir, 'credentials.json')
+
+        # Carrega o ficheiro usando o caminho absoluto gerado dinamicamente
+        creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)
         service = build('docs', 'v1', credentials=creds)
 
         # Lê o documento para saber o índice do fim
