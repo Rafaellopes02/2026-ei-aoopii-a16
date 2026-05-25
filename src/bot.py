@@ -64,7 +64,7 @@ async def on_message(message):
              import traceback
              print("ERRO DETALHADO:", traceback.format_exc())
             await message.channel.send("❌ *Erro: Falha ao gravar no Google Docs. Verifica as credenciais no Render.*")
-            # Dica: Não limpamos a memória aqui para poderes tentar outra vez
+            memoria_mensagens.clear()
 
 if __name__ == "__main__":
     if not TOKEN:
