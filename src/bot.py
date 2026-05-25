@@ -5,6 +5,7 @@ from llm_analyzer import analisar_comportamento
 from gdocs_writer import escrever_no_relatorio
 from keep_alive import keep_alive
 
+# Carrega as variáveis de ambiente
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
@@ -49,9 +50,12 @@ async def on_message(message):
         # 3. Limpa a memória para recomeçar o ciclo
         memoria_mensagens = []
 
+# Bloco principal de execução
 if __name__ == "__main__":
     if not TOKEN:
         print("Erro: DISCORD_TOKEN não encontrado no ficheiro .env")
     else:
+        # Inicia o servidor web invisível para enganar o Render
         keep_alive()
+        # Inicia o bot do Discord
         client.run(TOKEN)
