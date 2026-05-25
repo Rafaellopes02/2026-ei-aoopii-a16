@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from llm_analyzer import analisar_comportamento
 from gdocs_writer import escrever_no_relatorio
+from keep_alive import keep_alive
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -52,4 +53,9 @@ if __name__ == "__main__":
     if not TOKEN:
         print("Erro: DISCORD_TOKEN não encontrado no ficheiro .env")
     else:
+        if __name__ == "__main__":
+    if not TOKEN:
+        print("Erro: DISCORD_TOKEN não encontrado no ficheiro .env")
+    else:
+        keep_alive()
         client.run(TOKEN)
