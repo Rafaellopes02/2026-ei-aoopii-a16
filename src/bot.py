@@ -53,9 +53,5 @@ if __name__ == "__main__":
     if not TOKEN:
         print("Erro: DISCORD_TOKEN não encontrado no ficheiro .env")
     else:
-        if __name__ == "__main__":
-    if not TOKEN:
-        print("Erro: DISCORD_TOKEN não encontrado no ficheiro .env")
-    else:
         keep_alive()
         client.run(TOKEN)
