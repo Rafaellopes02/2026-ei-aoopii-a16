@@ -61,9 +61,9 @@ async def on_message(message):
             # .clear() é thread-safe
             memoria_mensagens.clear()
         else:
-             import traceback
-             print("ERRO DETALHADO:", traceback.format_exc())
-            await message.channel.send("❌ *Erro: Falha ao gravar no Google Docs. Verifica as credenciais no Render.*")
+        	import traceback
+            print("ERRO DETALHADO:", traceback.format_exc())
+        	await message.channel.send("❌ *Erro: Falha ao gravar no Google Docs. Verifica as credenciais no Render.*")
             memoria_mensagens.clear()
 
 if __name__ == "__main__":
