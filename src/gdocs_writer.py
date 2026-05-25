@@ -13,7 +13,7 @@ def escrever_no_relatorio(texto_analise):
     if not texto_analise:
         return False
 
-   try:
+    try:
         # Tenta o Secret File do Render primeiro
         if os.path.exists('/etc/secrets/credentials.json'):
             credentials_path = '/etc/secrets/credentials.json'
