@@ -24,7 +24,7 @@ OBSERVAÇÕES DO CICLO ANTERIOR (para continuidade):
 ---
 """
 
-     prompt_sistema = """
+    prompt_sistema = """
 És um antropólogo digital e psicólogo social que observa
 um servidor de Discord.
 
