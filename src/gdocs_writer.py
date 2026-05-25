@@ -48,6 +48,7 @@ def escrever_no_relatorio(texto_analise):
         return True
 
     except Exception as e:
-        print(f"Erro ao escrever no Google Docs: {e}")
-        print("Verifiquem se têm o ficheiro credentials.json configurado corretamente.")
-        return False
+         print(f"ERRO GOOGLE DOCS DETALHADO: {e}")
+    import traceback
+    traceback.print_exc()
+    return False
