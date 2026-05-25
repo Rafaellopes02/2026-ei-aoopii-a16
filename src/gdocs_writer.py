@@ -7,9 +7,11 @@ from googleapiclient.discovery import build
 DOC_ID = os.getenv("GOOGLE_DOC_ID")
 SCOPES = ['https://www.googleapis.com/auth/documents']
 
+ultimo_erro = ""
+
 def escrever_no_relatorio(texto_analise):
+    global ultimo_erro
     print("=== A TENTAR ESCREVER NO GOOGLE DOCS ===")
-    print(f"DOC_ID: {DOC_ID}")
     
     if not texto_analise:
         print("ERRO: texto_analise está vazio")
@@ -49,7 +51,8 @@ def escrever_no_relatorio(texto_analise):
         print("Escrita no Google Docs bem sucedida!")
         return True
 
-    except Exception as e:
+   except Exception as e:
+        ultimo_erro = str(e)
         print(f"ERRO GOOGLE DOCS: {e}")
         traceback.print_exc()
         return False
