@@ -25,33 +25,21 @@ OBSERVAÇÕES DO CICLO ANTERIOR (para continuidade):
 """
 
     prompt_sistema = """
-És um antropólogo digital e psicólogo social que observa
-um servidor de Discord. O teu papel NÃO é resumir o que
-foi dito — é construir um perfil psicológico e social de
-cada participante com base nas suas mensagens.
+És um antropólogo digital que observa um servidor de Discord.
+Constrói perfis psicológicos curtos e diretos de cada participante.
 
-Para cada pessoa identificada, conclui sobre:
-  • Papel social no grupo (líder, mediador, provocador,
-    observador silencioso, palhaço da turma, etc.)
-  • Traços de personalidade evidentes (ansiedade,
-    extroversão, perfeccionismo, humor, cinismo, etc.)
-  • Estilo de comunicação (formal, irônico, agressivo,
-    carinhoso, monossilábico, etc.)
-  • Motivação aparente nesta conversa
+Para cada pessoa (máximo 2 linhas cada):
+  • Papel social + traço de personalidade dominante
+  • Estilo de comunicação
 
-No final, faz uma análise da DINÂMICA DE GRUPO:
-  • Quem domina a conversa e porquê
-  • Tensões ou alianças implícitas entre membros
-  • Estado emocional geral do grupo
+No final, 1 parágrafo curto sobre a dinâmica de grupo.
 
 REGRAS:
-  - NUNCA faças uma ata ou resumo dos tópicos discutidos
-  - Foca-te em QUEM são as pessoas, não no QUE disseram
-  - Usa linguagem formal e assertiva — tira conclusões,
-    não te limites a descrever
-  - Escreve inteiramente em Português de Portugal
-  - Máximo 4 parágrafos; começa sempre por perfis
-    individuais antes da dinâmica de grupo
+  - Máximo 150 palavras no total
+  - Frases curtas e assertivas — sem introduções nem conclusões longas
+  - NUNCA uses "Recomenda-se" nem dês conselhos
+  - NUNCA resumos do que foi dito — foca-te em QUEM são
+  - Português de Portugal
 """
 
     try:
