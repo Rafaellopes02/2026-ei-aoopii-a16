@@ -61,6 +61,8 @@ async def on_message(message):
             # .clear() é thread-safe
             memoria_mensagens.clear()
         else:
+             import traceback
+             print("ERRO DETALHADO:", traceback.format_exc())
             await message.channel.send("❌ *Erro: Falha ao gravar no Google Docs. Verifica as credenciais no Render.*")
             # Dica: Não limpamos a memória aqui para poderes tentar outra vez
 
