@@ -13,8 +13,15 @@ def escrever_no_relatorio(texto_analise):
     if not texto_analise:
         return False
 
-    try:
-        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
+   try:
+        # Tenta o Secret File do Render primeiro
+        if os.path.exists('/etc/secrets/credentials.json'):
+            credentials_path = '/etc/secrets/credentials.json'
+        else:
+            credentials_path = 'credentials.json'
+        
+        print(f"A usar credenciais em: {credentials_path}")
+        creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)
         service = build('docs', 'v1', credentials=creds)
 
         # Lê o documento para saber o índice do fim
