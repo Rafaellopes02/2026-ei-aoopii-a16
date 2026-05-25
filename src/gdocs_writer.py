@@ -14,11 +14,15 @@ def escrever_no_relatorio(texto_analise):
         return False
 
     try:
-        # Descobre o caminho da pasta raiz (uma acima de 'src')
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        credentials_path = os.path.join(base_dir, 'credentials.json')
+        # 1. Tenta o caminho padrão de segredos do Render
+        credentials_path = '/etc/secrets/credentials.json'
+        
+        # 2. Se não existir (significa que estás no PC local), usa o ficheiro da tua pasta raiz
+        if not os.path.exists(credentials_path):
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            credentials_path = os.path.join(base_dir, 'credentials.json')
 
-        # Carrega o ficheiro usando o caminho absoluto gerado dinamicamente
+        # Carrega as credenciais com o caminho correto detetado
         creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)
         service = build('docs', 'v1', credentials=creds)
 
